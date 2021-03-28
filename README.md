@@ -1,7 +1,7 @@
 # UnseenMail
 Polybar Python script for viewing unread email from multi accounts
 
-Only works with IMAP Protocol and Gmail APIs
+Cleaned from the original version to work only with IMAP Protocol.
 
 ![](./screenshot/UnseenMail.png) 
 
@@ -9,10 +9,6 @@ Only works with IMAP Protocol and Gmail APIs
 - Polybar
 - Python 3
 - FontAwesome V4 (see your Distribution font configuration)
-- python Gmail APIs library (if you want to use Gmail APIs instead of IMAP for your Google accounts):
-    	
-    	
-        pip install --upgrade google-api-python-client
 
 # Install
 
@@ -45,18 +41,4 @@ Only works with IMAP Protocol and Gmail APIs
 	password = password
 	icon=
 	
-	[Example GMAILAPI]
-    protocol = GmailAPI
-    icon=
-
-For GmailAPI you can declare many accounts defining custom category names. For example, if you have 2 accounts, you can do this:
-    
-    [FirstGmail]
-    protocol = GmailAPI
-    icon=
-
-    [FirstGmail]
-    protocol = GmailAPI
-    icon=
-    
 5 - Run it !
