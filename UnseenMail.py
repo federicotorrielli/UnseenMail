@@ -32,5 +32,5 @@ for account in accounts:
         icon = accounts["DEFAULT"]["icon"]
     else:
         icon = currentAccount["icon"]
-    strFormatted += icon + " " + str(check_imap(currentAccount)) + " "
+    strFormatted += f" {icon} {str(check_imap(currentAccount))}"
 print(strFormatted)
