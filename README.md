@@ -3,7 +3,7 @@ Polybar Python script for viewing unread email from multi accounts
 
 Cleaned from the original version to work only with IMAP Protocol.
 
-![](./screenshot/UnseenMail.png) 
+![](https://i.imgur.com/DXqrKsa.png) 
 
 # Dependencies
 - Polybar
