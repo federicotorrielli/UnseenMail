@@ -24,13 +24,18 @@ def check_imap(imap_account):
     return len(client.search(None, 'UNSEEN')[1][0].split())
 
 
-for account in accounts:
-    currentAccount = accounts[account]
-    if account == "DEFAULT":
-        continue
-    if not currentAccount["icon"]:
-        icon = accounts["DEFAULT"]["icon"]
-    else:
-        icon = currentAccount["icon"]
-    strFormatted += f" {icon} {str(check_imap(currentAccount))}"
-print(strFormatted)
+if __name__ == '__main__':
+    for account in accounts:
+        currentAccount = accounts[account]
+        if not currentAccount["icon"]:
+            icon = accounts["DEFAULT"]["icon"]
+        else:
+            icon = currentAccount["icon"]
+        try:
+            curr = check_imap(currentAccount)
+        except ConnectionRefusedError:
+            curr = "SERVER ERROR"
+        except ConnectionAbortedError:
+            curr = "CONNECTION ABORTED"
+        strFormatted += f"{icon} {str(curr)} "
+    print(strFormatted)
